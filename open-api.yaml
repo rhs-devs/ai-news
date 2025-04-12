@@ -1,0 +1,56 @@
+openapi: 3.0.3
+info:
+  title: News Report Generator API
+  version: 1.0.0
+  description: API to generate a textual news report using JSON:API response format.
+servers:
+  - url: https://api.example.com
+paths:
+  /v1/actions/generate-news-report:
+    get:
+      summary: Generate a news report
+      description: Returns a text-based news report in JSON:API format.
+      operationId: generateNewsReport
+      responses:
+        '200':
+          description: Successfully generated news report
+          content:
+            application/vnd.api+json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    required: [type, id, attributes]
+                    properties:
+                      type:
+                        type: string
+                        example: news-report
+                      attributes:
+                        type: object
+                        properties:
+                          content:
+                            type: string
+                            example: >
+                              Breaking News: A major tech breakthrough was announced today, promising to revolutionize AI development across multiple sectors.
+        '500':
+          description: Internal server error
+          content:
+            application/vnd.api+json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        status:
+                          type: string
+                          example: "500"
+                        title:
+                          type: string
+                          example: Internal Server Error
+                        detail:
+                          type: string
+                          example: An unexpected error occurred while generating the news report.
