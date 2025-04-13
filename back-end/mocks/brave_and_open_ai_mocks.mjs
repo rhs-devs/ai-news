@@ -1,4 +1,3 @@
-// mockServer.mjs
 import http from 'http';
 import { URL } from 'url';
 
@@ -7,8 +6,61 @@ const PORT = process.env.PORT || 3001;
 // === Util: Simulated delay
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
-// === Brave News Mock ===
+// === Brave News Mock with Real Data ===
 function generateMockBraveNews(query) {
+  const newsData = [
+    {
+      type: "news_result",
+      url: "https://en.wikipedia.org/wiki/Tornado_outbreak_and_floods_of_April_2%E2%80%937,_2025",
+      title: "Tornado Outbreak and Floods Devastate Southern and Midwestern U.S.",
+      description: "A slow-moving weather system caused widespread tornadoes and historic flash flooding across the Southern and Midwestern United States from April 2–7, 2025.",
+      age: "6 days ago",
+      page_age: "518400",
+      page_fetched: new Date().toISOString(),
+      breaking: true,
+      extra_snippets: [
+        "The event resulted in 25 fatalities and over 47 injuries.",
+        "More than 318,000 power outages were reported during the disaster."
+      ],
+      thumbnail: {
+        src: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Tornado_damage_example.jpg/120px-Tornado_damage_example.jpg",
+        original: "https://upload.wikimedia.org/wikipedia/commons/4/4f/Tornado_damage_example.jpg"
+      },
+      meta_url: {
+        scheme: "https",
+        netloc: "en.wikipedia.org",
+        hostname: "en.wikipedia.org",
+        favicon: "https://en.wikipedia.org/favicon.ico",
+        path: "/wiki/Tornado_outbreak_and_floods_of_April_2%E2%80%937,_2025"
+      }
+    },
+    {
+      type: "news_result",
+      url: "https://en.wikipedia.org/wiki/2025_in_South_Korea",
+      title: "South Korea Seizes Record 2-Ton Cocaine Shipment",
+      description: "Authorities announced the seizure of two tons of cocaine valued at 1 trillion won from a Norwegian-flagged vessel, marking the largest drug bust in South Korea's history.",
+      age: "10 days ago",
+      page_age: "864000",
+      page_fetched: new Date().toISOString(),
+      breaking: false,
+      extra_snippets: [
+        "The vessel arrived at Gangneung from Mexico via Ecuador, Panama, and China.",
+        "The Korea Customs Service led the operation resulting in the seizure."
+      ],
+      thumbnail: {
+        src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Cocaine_bricks.jpg/120px-Cocaine_bricks.jpg",
+        original: "https://upload.wikimedia.org/wikipedia/commons/3/3e/Cocaine_bricks.jpg"
+      },
+      meta_url: {
+        scheme: "https",
+        netloc: "en.wikipedia.org",
+        hostname: "en.wikipedia.org",
+        favicon: "https://en.wikipedia.org/favicon.ico",
+        path: "/wiki/2025_in_South_Korea"
+      }
+    }
+  ];
+
   return {
     type: "news",
     query: {
@@ -18,57 +70,7 @@ function generateMockBraveNews(query) {
       spellcheck_off: false,
       show_strict_warning: false
     },
-    results: [
-      {
-        type: "news_result",
-        url: `https://example.com/article-about-${query}`,
-        title: `${query} makes headlines worldwide!`,
-        description: `A recent surge of interest in ${query} affects global markets.`,
-        age: "2 hours ago",
-        page_age: "7200",
-        page_fetched: new Date().toISOString(),
-        breaking: true,
-        extra_snippets: [
-          `Here's why ${query} matters...`,
-          `${query} could change everything...`
-        ],
-        thumbnail: {
-          src: "https://example.com/thumb.jpg",
-          original: "https://cdn.example.com/original-thumb.jpg"
-        },
-        meta_url: {
-          scheme: "https",
-          netloc: "example.com",
-          hostname: "example.com",
-          favicon: "https://example.com/favicon.ico",
-          path: `/article-about-${query}`
-        }
-      },
-      {
-        type: "news_result",
-        url: `https://anothernews.com/story/${query}`,
-        title: `Top analysts discuss ${query}`,
-        description: `Experts weigh in on what ${query} means for the future.`,
-        age: "1 day ago",
-        page_age: "86400",
-        page_fetched: new Date(Date.now() - 86000000).toISOString(),
-        breaking: false,
-        extra_snippets: [
-          `Analysts predict trends around ${query}`
-        ],
-        thumbnail: {
-          src: "https://anothernews.com/thumb.png",
-          original: "https://cdn.anothernews.com/original-thumb.png"
-        },
-        meta_url: {
-          scheme: "https",
-          netloc: "anothernews.com",
-          hostname: "anothernews.com",
-          favicon: "https://anothernews.com/favicon.ico",
-          path: `/story/${query}`
-        }
-      }
-    ]
+    results: newsData
   };
 }
 

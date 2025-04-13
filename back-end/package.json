@@ -9,10 +9,16 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "express": "^5.1.0"
+    "@mozilla/readability": "^0.6.0",
+    "cheerio": "^1.0.0",
+    "express": "^5.1.0",
+    "jsdom": "^26.0.0",
+    "node-fetch": "^3.3.2",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
     "@types/express": "^5.0.1",
+    "@types/jsdom": "^21.1.7",
     "@types/node": "^22.14.1",
     "typescript": "^5.8.3"
   }
