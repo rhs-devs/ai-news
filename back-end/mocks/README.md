@@ -1,4 +1,3 @@
-```markdown
 ### Mock Backend: Setup & Run
 
 This project includes a mock backend server with a sample JSON:API endpoint at:
@@ -42,5 +41,4 @@ You can test it with:
 
 ```
 curl -X POST -H "Accept: application/vnd.api+json" http://localhost:3000/v1/actions/generate-news-report
-```
 ```
