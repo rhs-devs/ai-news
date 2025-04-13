@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect, useState } from 'react'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+    const [newsReport, setNewsReport] = useState<string>();
+    const url = 'http://localhost:3000/v1/actions/generate-news-report';
+    useEffect(() => {
+        const fetchNewsReport = async () => {
+            try {
+                const response = await fetch(url, {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/vnd.api+json',
+                    },
+                });
+                if (!response.ok) {
+                    throw new Error(`Response status: ${response.status}`);
+                }
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+                const json = await response.json();
+                const report = json.data.attributes.content;
+                setNewsReport(report);
+                console.log(json);
+
+            } catch (error) {
+                if (typeof error === "object" && error && "message" in error && typeof error.message === "string") {
+                    console.error(error.message);
+                }
+            }
+        }
+        fetchNewsReport();
+    }, []);
+
+
+    return (
+        <>
+            <div>{newsReport}</div>
+        </>
+    );
 }
 
 export default App

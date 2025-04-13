@@ -10,3 +10,6 @@ run-lambda-mock:
 
 run-mocks-for-backend:
 	cd back-end/mocks; node ./brave_and_open_ai_mocks.mjs;
+
+start-frontend:
+	cd ./frontend/ai-news-frontend/; npm run dev;

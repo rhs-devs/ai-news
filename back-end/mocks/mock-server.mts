@@ -29,6 +29,11 @@ As the world looks for sustainable solutions in the face of worsening climate im
 `.trim();
 
 app.post('/v1/actions/generate-news-report', (_req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.setHeader("Access-Control-Allow-Credentials", "false");
+
   res.status(200).json({
     data: {
       type: 'news-report',
