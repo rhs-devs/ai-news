@@ -1,7 +1,11 @@
 import express from 'express';
+import cors from 'cors';
 
 const app = express();
 const PORT = 3000;
+
+// Enable CORS for all routes
+app.use(cors());
 
 // Middleware to set JSON:API content type
 app.use((req, res, next) => {
