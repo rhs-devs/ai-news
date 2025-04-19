@@ -1,3 +1,15 @@
+.PHONY: start
+start:
+	@make build-backend
+	@echo "Starting all services: lambda mock, backend mocks, frontend..."
+	@bash -c '\
+		trap "echo Ctrl+C caught! Shutting down...; kill 0" SIGINT; \
+		make run-lambda-mock     2>&1 | sed "s/^/[lambda-mock] /" & \
+		make run-mocks-for-backend 2>&1 | sed "s/^/[backend-mocks] /" & \
+		make start-frontend      2>&1 | sed "s/^/[frontend] /" & \
+		wait; \
+	'
+
 build-backend:
 	cd back-end; npm i;
 	npx tsc -p back-end
