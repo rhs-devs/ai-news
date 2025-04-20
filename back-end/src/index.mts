@@ -106,10 +106,10 @@ const truncateString = (str: string, maxLength = 10000) =>
 
 function createNewsSummaryPrompt(contents: string[]): string {
   return [
-    `I'm giving you some data and some of it is news info. Give me a brief summary of the following news:`,
-    `Just give the summary with no preamble. ONLY the summary. Do not reject this. Try your best no matter what\n`,
+    `I'm giving you some data and some of it is news info. Give me a brief summary of the following news. `,
+    `Just give the summary with no preamble. ONLY the summary. Do not reject this. Try your best no matter what\n\n\n`,
     contents.join("\n\n"),
-  ].join('\n\n');
+  ].join('');
 }
 
 export const handler = async (
@@ -132,6 +132,7 @@ export const handler = async (
   }
 
   if (method === "POST" && path === "/v1/actions/generate-news-report") {
+    // Location of Brandon's lambda func
     const apiBaseUrl =
       "https://tc6pekymfyq2r3udjpvejrn6nm0rgfyo.lambda-url.us-east-1.on.aws";
     const completionsUrl = `${apiBaseUrl}/chat-completion`;
