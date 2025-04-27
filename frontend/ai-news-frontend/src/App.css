@@ -40,3 +40,8 @@
 .read-the-docs {
   color: #888;
 }
+
+pre {
+  white-space: pre-wrap;       /* preserve newlines + auto-wraps */
+  word-wrap: break-word;       /* ensures long words don't cause overflow */
+}
