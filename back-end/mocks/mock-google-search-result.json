@@ -1,0 +1,598 @@
+{
+    "kind": "customsearch#search",
+    "url": {
+        "type": "application/json",
+        "template": "https://www.googleapis.com/customsearch/v1?q={searchTerms}&num={count?}&start={startIndex?}&lr={language?}&safe={safe?}&cx={cx?}&sort={sort?}&filter={filter?}&gl={gl?}&cr={cr?}&googlehost={googleHost?}&c2coff={disableCnTwTranslation?}&hq={hq?}&hl={hl?}&siteSearch={siteSearch?}&siteSearchFilter={siteSearchFilter?}&exactTerms={exactTerms?}&excludeTerms={excludeTerms?}&linkSite={linkSite?}&orTerms={orTerms?}&dateRestrict={dateRestrict?}&lowRange={lowRange?}&highRange={highRange?}&searchType={searchType}&fileType={fileType?}&rights={rights?}&imgSize={imgSize?}&imgType={imgType?}&imgColorType={imgColorType?}&imgDominantColor={imgDominantColor?}&alt=json"
+    },
+    "queries": {
+        "request": [
+            {
+                "title": "Google Custom Search - news",
+                "totalResults": "21540000000",
+                "searchTerms": "news",
+                "count": 10,
+                "startIndex": 1,
+                "inputEncoding": "utf8",
+                "outputEncoding": "utf8",
+                "safe": "off",
+                "cx": "b1543754841514de4"
+            }
+        ],
+        "nextPage": [
+            {
+                "title": "Google Custom Search - news",
+                "totalResults": "21540000000",
+                "searchTerms": "news",
+                "count": 10,
+                "startIndex": 11,
+                "inputEncoding": "utf8",
+                "outputEncoding": "utf8",
+                "safe": "off",
+                "cx": "b1543754841514de4"
+            }
+        ]
+    },
+    "context": {
+        "title": "ainews"
+    },
+    "searchInformation": {
+        "searchTime": 0.271114,
+        "formattedSearchTime": "0.27",
+        "totalResults": "21540000000",
+        "formattedTotalResults": "21,540,000,000"
+    },
+    "items": [
+        {
+            "kind": "customsearch#result",
+            "title": "Google News",
+            "htmlTitle": "Google <b>News</b>",
+            "link": "https://news.google.com/",
+            "displayLink": "news.google.com",
+            "snippet": "Top stories · Car drives into Vancouver's Lapu Lapu street festival crowd: What we know · Trump's first 100 days: America First president is overturning the ...",
+            "htmlSnippet": "Top stories &middot; Car drives into Vancouver&#39;s Lapu Lapu street festival crowd: What we know &middot; Trump&#39;s first 100 days: America First president is overturning the&nbsp;...",
+            "formattedUrl": "https://news.google.com/",
+            "htmlFormattedUrl": "https://<b>news</b>.google.com/",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2AE_mHW4FspGNXIbbrBE3be1wYIw5yEyXzy6XMaNUPO29gcihNy7DC0xD&s",
+                        "width": "225",
+                        "height": "225"
+                    }
+                ],
+                "metatags": [
+                    {
+                        "application-name": "News",
+                        "apple-itunes-app": "app-id=459182288",
+                        "og:image": "https://lh6.googleusercontent.com/proxy/3NclTnCvFtcRLZUDIB15z_AnMW0TOCYyuSQxf8PD3n_uKf5wb_jB9ovM2rESJFgJXeQjbH19BW0Bggs-Pof0x-S7g_8XEpSe4r-3vJsYRZlXvWMNrU3QCogkts8FptEMyu4aE_huQMLTogkw4oY6dfl1plHqTM3WKkypYwMA2TcaAWI=rj-c-w300-h300-l95-c0x34a853",
+                        "theme-color": "white",
+                        "og:type": "website",
+                        "twitter:card": "summary",
+                        "twitter:title": "Home page - Google News",
+                        "og:site_name": "Google News",
+                        "apple-mobile-web-app-title": "News",
+                        "og:title": "Home page - Google News",
+                        "title": "Home page - Google News",
+                        "og:description": "Read full articles, watch videos, browse thousands of titles and more on the \"Home page\" topic with Google News.",
+                        "twitter:image": "https://lh6.googleusercontent.com/proxy/3NclTnCvFtcRLZUDIB15z_AnMW0TOCYyuSQxf8PD3n_uKf5wb_jB9ovM2rESJFgJXeQjbH19BW0Bggs-Pof0x-S7g_8XEpSe4r-3vJsYRZlXvWMNrU3QCogkts8FptEMyu4aE_huQMLTogkw4oY6dfl1plHqTM3WKkypYwMA2TcaAWI=rj-c-w300-h300-l95-c0x34a853",
+                        "referrer": "origin",
+                        "apple-mobile-web-app-status-bar-style": "black",
+                        "msapplication-tap-highlight": "no",
+                        "viewport": "width=device-width,initial-scale=1,minimal-ui",
+                        "apple-mobile-web-app-capable": "yes",
+                        "twitter:description": "Read full articles, watch videos, browse thousands of titles and more on the \"Home page\" topic with Google News.",
+                        "mobile-web-app-capable": "yes",
+                        "og:locale": "en_US",
+                        "og:url": "https://news.google.com/topics/CAAqHAgKIhZDQkFTQ2dvSUwyMHZNRE5uWkRVb0FBUAE"
+                    }
+                ],
+                "cse_image": [
+                    {
+                        "src": "https://lh6.googleusercontent.com/proxy/3NclTnCvFtcRLZUDIB15z_AnMW0TOCYyuSQxf8PD3n_uKf5wb_jB9ovM2rESJFgJXeQjbH19BW0Bggs-Pof0x-S7g_8XEpSe4r-3vJsYRZlXvWMNrU3QCogkts8FptEMyu4aE_huQMLTogkw4oY6dfl1plHqTM3WKkypYwMA2TcaAWI=rj-c-w300-h300-l95-c0x34a853"
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "NBC News - Breaking News & Top Stories - Latest World, US ...",
+            "htmlTitle": "NBC <b>News</b> - Breaking <b>News</b> &amp; Top Stories - Latest World, US ...",
+            "link": "https://www.nbcnews.com/",
+            "displayLink": "www.nbcnews.com",
+            "snippet": "Speaker Mike Johnson presses forward with budget vote despite conservative opposition · Stocks open lower as tariffs reality sets in · More than 150 Chinese ...",
+            "htmlSnippet": "Speaker Mike Johnson presses forward with budget vote despite conservative opposition &middot; Stocks open lower as tariffs reality sets in &middot; More than 150 Chinese&nbsp;...",
+            "formattedUrl": "https://www.nbcnews.com/",
+            "htmlFormattedUrl": "https://www.nbc<b>news</b>.com/",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwd0bcYzjbfr1nRJPds8jji9dGz15jD0XvglpvPj2q2gX8I29Hf63cgXSK&s",
+                        "width": "275",
+                        "height": "183"
+                    }
+                ],
+                "thumbnail": [
+                    {
+                        "src": "https://media-cldnry.s-nbcnews.com/image/upload/t_social_share_1024x768_scale,f_auto,q_auto:best/v1696280772/newsgroup-logos/nbcnews/social/primary-color-1680x840.png"
+                    }
+                ],
+                "metatags": [
+                    {
+                        "msapplication-config": "https://nodeassets.nbcnews.com/cdnassets/projects/ramen/favicon/nbcnews/all-other-sizes-PNG.ico/browserconfig.xml",
+                        "og:image": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/v1696280772/newsgroup-logos/nbcnews/social/primary-color-1680x840.png",
+                        "thumbnail": "https://media-cldnry.s-nbcnews.com/image/upload/t_social_share_1024x768_scale,f_auto,q_auto:best/v1696280772/newsgroup-logos/nbcnews/social/primary-color-1680x840.png",
+                        "og:image:width": "1200",
+                        "og:type": "website",
+                        "twitter:title": "NBC News - Breaking News & Top Stories - Latest World, US & Local News",
+                        "twitter:card": "summary_large_image",
+                        "og:site_name": "NBC News",
+                        "og:title": "NBC News - Breaking News & Top Stories - Latest World, US & Local News",
+                        "og:image:height": "630",
+                        "branch:deeplink:authorthumbnail1": "https://media-cldnry.s-nbcnews.com/image/upload/newscms/2024_26/3653107/240627-megan-lebowitz.jpg",
+                        "fb:pages": "155869377766434",
+                        "twitter:creator": "NBCNews",
+                        "og:description": "Go to NBCNews.com for breaking news, videos, and the latest top stories in world news, business, politics, health and pop culture.",
+                        "twitter:image": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1024-512,f_auto,q_auto:best/v1696280772/newsgroup-logos/nbcnews/social/primary-color-1680x840.png",
+                        "pocket-site-verification": "7d430daabab89c549b078097430be5",
+                        "twitter:image:src": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1024-512,f_auto,q_auto:best/v1696280772/newsgroup-logos/nbcnews/social/primary-color-1680x840.png",
+                        "branch:deeplink:unibrow": "Deals and Sales",
+                        "fb:app_id": "10150138890205613",
+                        "twitter:site": "NBCNews",
+                        "viewport": "width=device-width, initial-scale=1, user-scalable=yes",
+                        "twitter:description": "Go to NBCNews.com for breaking news, videos, and the latest top stories in world news, business, politics, health and pop culture.",
+                        "og:locale": "en_US",
+                        "og:url": "https://www.nbcnews.com"
+                    }
+                ],
+                "cse_image": [
+                    {
+                        "src": "https://media-cldnry.s-nbcnews.com/image/upload/t_focal-762x508,f_auto,q_auto:best/rockcms/2025-04/250409-Costco-aa-519-8117c5.jpg"
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "Fox News - Breaking News Updates | Latest News Headlines ...",
+            "htmlTitle": "Fox <b>News</b> - Breaking <b>News</b> Updates | Latest <b>News</b> Headlines ...",
+            "link": "https://www.foxnews.com/",
+            "displayLink": "www.foxnews.com",
+            "snippet": "Latest Breaking News Today from Fox News · New bill threatens to cripple 'judicial tyranny' from derailing Trump's agenda at every turn · FCC to brief lawmakers ...",
+            "htmlSnippet": "Latest Breaking <b>News</b> Today from Fox <b>News</b> &middot; New bill threatens to cripple &#39;judicial tyranny&#39; from derailing Trump&#39;s agenda at every turn &middot; FCC to brief lawmakers&nbsp;...",
+            "formattedUrl": "https://www.foxnews.com/",
+            "htmlFormattedUrl": "https://www.fox<b>news</b>.com/",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl3-06vNLR9stTvfuAqK6kP9XcV6v8IRG5h3lqvFDv4ZiNVDKn3a1GOb0&s",
+                        "width": "299",
+                        "height": "168"
+                    }
+                ],
+                "VideoObject": [
+                    {}
+                ],
+                "metatags": [
+                    {
+                        "pagetype": "homepage",
+                        "dc.publisher": "FOX News",
+                        "apple-itunes-app": "app-id=367623543",
+                        "og:image": "//static.foxnews.com/static/orion/styles/img/fox-news/og/og-fox-news.png",
+                        "twitter:app:url:iphone": "//itunes.apple.com/us/app/fox-news/id367623543?mt=8",
+                        "twitter:app:id:googleplay": "com.foxnews.android",
+                        "msapplication-square70x70logo": "//static.foxnews.com/static/orion/styles/img/fox-news/favicons/mstile-70x70.png",
+                        "theme-color": "#1b4e81",
+                        "twitter:card": "app",
+                        "og:site_name": "Fox News",
+                        "twitter:app:url:ipad": "//itunes.apple.com/us/app/fox-news-for-ipad/id436484582?mt=8",
+                        "dc.format": "text/html",
+                        "prism.channel": "fnc",
+                        "msapplication-wide310x150logo": "//static.foxnews.com/static/orion/styles/img/fox-news/favicons/mstile-310x150.png",
+                        "prism.genre": "homePage",
+                        "vr:canonical": "https://www.foxnews.com",
+                        "twitter:app:id:iphone": "367623543",
+                        "og:description": "Breaking News, Latest News and Current News from FOXNews.com. Breaking news and video. Latest Current News: U.S., World, Entertainment, Health, Business, Technology, Politics, Sports.",
+                        "prism.aggregationtype": "root",
+                        "dc.type": "Collection",
+                        "dcterms.modified": "2025-02-25 03:11:49 PM",
+                        "msapplication-square310x310logo": "//static.foxnews.com/static/orion/styles/img/fox-news/favicons/mstile-310x310.png",
+                        "hp_page_type": "static",
+                        "hp_site_id": "foxnews",
+                        "twitter:account_id": "1367531",
+                        "msapplication-tilecolor": "#1b4e81",
+                        "dc.description": "Breaking News, Latest News and Current News from FOXNews.com. Breaking news and video. Latest Current News: U.S., World, Entertainment, Health, Business, Technology, Politics, Sports.",
+                        "og:type": "website",
+                        "twitter:title": "Fox News - Breaking News Updates | Latest News Headlines | Photos & News Videos",
+                        "og:title": "Fox News - Breaking News Updates | Latest News Headlines | Photos & News Video",
+                        "twitter:app:id:ipad": "436484582",
+                        "hp_version": "v3",
+                        "dc.date": "2025-02-25 03:11:49 PM",
+                        "dcterms.created": "2025-02-25 03:11:49 PM",
+                        "msapplication-square150x150logo": "//static.foxnews.com/static/orion/styles/img/fox-news/favicons/mstile-150x150.png",
+                        "fb:pages": "15704546335",
+                        "twitter:app:url:googleplay": "//play.google.com/store/apps/details?id=com.foxnews.android",
+                        "viewport": "width=device-width, minimum-scale=1, initial-scale=1",
+                        "apple-mobile-web-app-capable": "yes",
+                        "twitter:description": "Breaking News, Latest News and Current News from FOXNews.com. Breaking news and video. Latest Current News: U.S., World, Entertainment, Health, Business, Technology, Politics, Sports",
+                        "dc.title": "Fox News - Breaking News Updates | Latest News Headlines | Photos & News Videos",
+                        "dc.subject": "news, breaking news, latest news, current news, world news, national news",
+                        "prism.section": "root",
+                        "dc.language": "en-US",
+                        "og:url": "https://www.foxnews.com",
+                        "dcterms.abstract": "Breaking News, Latest News and Current News from FOXNews.com. Breaking news and video. Latest Current News: U.S., World, Entertainment, Health, Business, Technology, Politics, Sports.",
+                        "format-detection": "telephone=no"
+                    }
+                ],
+                "cse_image": [
+                    {
+                        "src": "https://a57.foxnews.com/prod-hp.foxnews.com/images/2025/02/343/193/064395d10aa1e15dc0506fcd56c9d9f7.png?tl=1&ve=1"
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "CNN: Breaking News, Latest News and Videos",
+            "htmlTitle": "CNN: Breaking <b>News</b>, Latest <b>News</b> and Videos",
+            "link": "https://www.cnn.com/",
+            "displayLink": "www.cnn.com",
+            "snippet": "Israel-Hamas war · Israeli airstrike rocks southern Beirut after military issues evacuation warning · Senior Hamas leaders depart Cairo following ceasefire ...",
+            "htmlSnippet": "Israel-Hamas war &middot; Israeli airstrike rocks southern Beirut after military issues evacuation warning &middot; Senior Hamas leaders depart Cairo following ceasefire&nbsp;...",
+            "formattedUrl": "https://www.cnn.com/",
+            "htmlFormattedUrl": "https://www.cnn.com/",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5cT0GPXj1CELf6dQguE0OoUsBykYyViKZ04bcqbym_qrcSipW8iW-TiA&s",
+                        "width": "300",
+                        "height": "168"
+                    }
+                ],
+                "metatags": [
+                    {
+                        "og:image": "https://media.cnn.com/api/v1/images/cnn/cnn-placeholder-image.jpeg",
+                        "twitter:title": "Breaking News, Latest News and Videos | CNN",
+                        "og:type": "website",
+                        "twitter:card": "summary_large_image",
+                        "og:site_name": "CNN",
+                        "og:title": "Breaking News, Latest News and Videos | CNN",
+                        "meta-section": "homepage",
+                        "type": "section",
+                        "og:description": "View the latest news and breaking news today for U.S., world, weather, entertainment, politics and health at CNN.com.",
+                        "twitter:image": "https://media.cnn.com/api/v1/images/cnn/cnn-placeholder-image.jpeg",
+                        "article:publisher": "https://www.facebook.com/CNN",
+                        "article:tag": "cnn news, daily news, breaking news, news today, current events",
+                        "fb:app_id": "80401312489",
+                        "twitter:site": "@cnn",
+                        "viewport": "width=device-width,initial-scale=1,shrink-to-fit=no",
+                        "twitter:description": "View the latest news and breaking news today for U.S., world, weather, entertainment, politics and health at CNN.com.",
+                        "template_type": "landing_homepage",
+                        "theme": "cnn",
+                        "og:url": "https://www.cnn.com"
+                    }
+                ],
+                "cse_image": [
+                    {
+                        "src": "https://media.cnn.com/api/v1/images/cnn/cnn-placeholder-image.jpeg"
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "Home - BBC News",
+            "htmlTitle": "Home - BBC <b>News</b>",
+            "link": "https://www.bbc.com/news",
+            "displayLink": "www.bbc.com",
+            "snippet": "Festival organisers 'heartbroken' as Vancouver car ramming attack kills 11 · Mourning turns to anger in Iran after massive port explosion kills 40 · A stunning ...",
+            "htmlSnippet": "Festival organisers &#39;heartbroken&#39; as Vancouver car ramming attack kills 11 &middot; Mourning turns to anger in Iran after massive port explosion kills 40 &middot; A stunning&nbsp;...",
+            "formattedUrl": "https://www.bbc.com/news",
+            "htmlFormattedUrl": "https://www.bbc.com/<b>news</b>",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRepZcfZI0aOY8y65XBltKknWyiUe87bBRAEbX5H4D3N4lLWt-cZoyFfTg&s",
+                        "width": "300",
+                        "height": "168"
+                    }
+                ],
+                "metatags": [
+                    {
+                        "msapplication-tilecolor": "#da532c",
+                        "apple-itunes-app": "app-id=364147881, app-argument=https://www.bbc.com/news",
+                        "twitter:title": "Home - BBC News",
+                        "theme-color": "#ffffff",
+                        "al:ios:app_name": "BBC: World News & Stories",
+                        "cxenseparse:pageclass": "frontpage",
+                        "og:title": "Home - BBC News",
+                        "al:android:package": "bbc.mobile.news.ww",
+                        "al:ios:url": "bbcx://news",
+                        "al:web:url": "https://bbc.com/news",
+                        "og:description": "Visit BBC News for up-to-the-minute news, breaking news, video, audio and feature stories. BBC News provides trusted World and UK news as well as local and regional perspectives. Also entertainment, business, science, technology and health news.",
+                        "version": "web-2.19.1-12",
+                        "al:ios:app_store_id": "364147881",
+                        "al:android:url": "bbcx://news",
+                        "next-head-count": "31",
+                        "viewport": "width=device-width",
+                        "twitter:description": "Visit BBC News for up-to-the-minute news, breaking news, video, audio and feature stories. BBC News provides trusted World and UK news as well as local and regional perspectives. Also entertainment, business, science, technology and health news.",
+                        "al:android:app_name": "BBC: World News & Stories"
+                    }
+                ],
+                "cse_image": [
+                    {
+                        "src": "https://ichef.bbci.co.uk/news/480/cpsprodpb/ed2b/live/48f378d0-209f-11f0-a4a0-078cb429eb10.jpg.webp"
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "Yahoo News: Latest and Breaking News, Headlines, Live Updates ...",
+            "htmlTitle": "Yahoo <b>News</b>: Latest and Breaking <b>News</b>, Headlines, Live Updates ...",
+            "link": "https://news.yahoo.com/",
+            "displayLink": "news.yahoo.com",
+            "snippet": "Yahoo News · Wisconsin arrest makes it clear Trump administration expects judges to toe its line · 11 people killed after vehicle plows into Vancouver street ...",
+            "htmlSnippet": "Yahoo <b>News</b> &middot; Wisconsin arrest makes it clear Trump administration expects judges to toe its line &middot; 11 people killed after vehicle plows into Vancouver street&nbsp;...",
+            "formattedUrl": "https://news.yahoo.com/",
+            "htmlFormattedUrl": "https://<b>news</b>.yahoo.com/",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoCgoe2XIWK1wvQQnCXpvwGieiET3EZ89hNdiU356o8MB7kfJHy8vE4EBf&s",
+                        "width": "225",
+                        "height": "225"
+                    }
+                ],
+                "metatags": [
+                    {
+                        "og:image": "https://s.yimg.com/cv/apiv2/social/images/yahoo_default_logo.png",
+                        "full-screen": "yes",
+                        "twitter:card": "summary",
+                        "theme-color": "#fff",
+                        "og:site_name": "Yahoo News - Latest News & Headlines",
+                        "apple-mobile-web-app-title": "Yahoo News - Latest News & Headlines",
+                        "nightmode": "disable",
+                        "msapplication-tileimage": "https://s.yimg.com/os/mit/media/p/presentation/images/icons/win8-tile-1484740.png",
+                        "og:description": "The latest news and headlines from Yahoo News. Get breaking news stories and in-depth coverage with videos and photos.",
+                        "imagemode": "force",
+                        "twitter:dnt": "on",
+                        "twitter:site": "@YahooNews",
+                        "oath:guce:consent-host": "guce.yahoo.com",
+                        "browsermode": "application",
+                        "msapplication-tap-highlight": "no",
+                        "screen-orientation": "portrait",
+                        "conf:cjs:banner-id": "fp-guce-inline-consent-iframe",
+                        "conf:cjs:toggle-class": "consent-displayed",
+                        "application-name": "Yahoo News - Latest News & Headlines",
+                        "msapplication-tilecolor": "#fff",
+                        "og:type": "website",
+                        "layoutmode": "fitscreen",
+                        "og:title": "Yahoo News: Latest and Breaking News, Headlines, Live Updates, and More",
+                        "conf:cjs:banner-container": "#consent-node",
+                        "conf:cjs:banner": "privacy3",
+                        "fb:pages": "338028696036",
+                        "msapplication-navbutton-color": "red",
+                        "referrer": "unsafe-url",
+                        "fb:app_id": "458584288257241",
+                        "conf:cjs:locale": "en-US",
+                        "apple-mobile-web-app-status-bar-style": "#fff",
+                        "viewport": "width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no",
+                        "apple-mobile-web-app-capable": "yes",
+                        "mobile-web-app-capable": "yes",
+                        "og:url": "https://news.yahoo.com/",
+                        "format-detection": "telephone=no"
+                    }
+                ],
+                "cse_image": [
+                    {
+                        "src": "https://s.yimg.com/cv/apiv2/social/images/yahoo_default_logo.png"
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "CBS News | Breaking news, top stories & today's latest headlines",
+            "htmlTitle": "CBS <b>News</b> | Breaking <b>news</b>, top stories &amp; today&#39;s latest headlines",
+            "link": "https://www.cbsnews.com/",
+            "displayLink": "www.cbsnews.com",
+            "snippet": "Latest CBS News Videos · Latest CBS News Videos · Homan: \"Not aware\" of 3 citizen kids deported · Shaheen: Hegseth creating \"chaos\" at Pentagon · Lavrov: ...",
+            "htmlSnippet": "Latest CBS <b>News</b> Videos &middot; Latest CBS <b>News</b> Videos &middot; Homan: &quot;Not aware&quot; of 3 citizen kids deported &middot; Shaheen: Hegseth creating &quot;chaos&quot; at Pentagon &middot; Lavrov:&nbsp;...",
+            "formattedUrl": "https://www.cbsnews.com/",
+            "htmlFormattedUrl": "https://www.cbs<b>news</b>.com/",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxYhmbg0m4gMZDu_glcEJm5OYfLqwtN_JlSdsRme4fLo8DaF5Hbm6g1lB6&s",
+                        "width": "300",
+                        "height": "168"
+                    }
+                ],
+                "metatags": [
+                    {
+                        "og:image": "https://assets1.cbsnewsstatic.com/hub/i/2022/01/22/4fc70efe-a2d7-4eb3-8f23-05db514ef3bb/news-slate-stream.jpg",
+                        "twitter:app:url:iphone": "cbsnewsapp://cbsnews.com/door/front-door-new-views/",
+                        "twitter:app:id:googleplay": "com.treemolabs.apps.cbsnews",
+                        "og:image:width": "1280",
+                        "twitter:card": "summary_large_image",
+                        "theme-color": "#101010",
+                        "twitter:app:url:ipad": "cbsnewsapp://cbsnews.com/door/front-door-new-views/",
+                        "apple-mobile-web-app-title": "CBS News",
+                        "al:android:package": "com.treemolabs.apps.cbsnews",
+                        "twitter:app:name:googleplay": "CBS News",
+                        "al:ios:url": "cbsnewsapp://cbsnews.com/door/front-door-new-views/",
+                        "twitter:app:id:iphone": "334256223",
+                        "og:description": "CBS News offers breaking news coverage of today's top headlines. Stay informed on the biggest new stories with our balanced, trustworthy reporting.",
+                        "al:ios:app_store_id": "334256223",
+                        "article:publisher": "https://www.facebook.com/CBSNews/",
+                        "twitter:dnt": "on",
+                        "twitter:image": "https://assets1.cbsnewsstatic.com/hub/i/2022/01/22/4fc70efe-a2d7-4eb3-8f23-05db514ef3bb/news-slate-stream.jpg",
+                        "twitter:site": "@CBSNews",
+                        "twitter:app:country": "US",
+                        "og:type": "website",
+                        "twitter:title": "CBS News | Breaking news, top stories & today's latest headlines",
+                        "al:ios:app_name": "CBS News",
+                        "og:title": "CBS News | Breaking news, top stories & today's latest headlines",
+                        "og:image:height": "720",
+                        "twitter:app:id:ipad": "334256223",
+                        "color-scheme": "only light",
+                        "al:web:url": "https://www.cbsnews.com/",
+                        "fb:pages": "131459315949",
+                        "al:android:url": "cbsnewsapp://cbsnews.com/door/front-door-new-views/",
+                        "fb:app_id": "1536620209892267",
+                        "twitter:app:url:googleplay": "cbsnewsapp://cbsnews.com/door/front-door-new-views/",
+                        "apple-mobile-web-app-status-bar-style": "black",
+                        "twitter:app:name:ipad": "CBS News",
+                        "viewport": "width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0",
+                        "twitter:description": "CBS News offers breaking news coverage of today's top headlines. Stay informed on the biggest new stories with our balanced, trustworthy reporting.",
+                        "apple-mobile-web-app-capable": "yes",
+                        "og:url": "https://www.cbsnews.com/",
+                        "al:android:app_name": "CBS News",
+                        "twitter:app:name:iphone": "CBS News"
+                    }
+                ],
+                "cse_image": [
+                    {
+                        "src": "https://assets1.cbsnewsstatic.com/hub/i/2022/01/22/4fc70efe-a2d7-4eb3-8f23-05db514ef3bb/news-slate-stream.jpg"
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "News: U.S. and World News Headlines : NPR",
+            "htmlTitle": "<b>News</b>: U.S. and World <b>News</b> Headlines : NPR",
+            "link": "https://www.npr.org/sections/news/",
+            "displayLink": "www.npr.org",
+            "snippet": "Federal work shaped a Black middle class. Now it's destabilized by Trump's job cuts · April 27, 2025 • For generations of Black workers, federal government jobs ...",
+            "htmlSnippet": "Federal work shaped a Black middle class. Now it&#39;s destabilized by Trump&#39;s job cuts &middot; April 27, 2025 • For generations of Black workers, federal government jobs&nbsp;...",
+            "formattedUrl": "https://www.npr.org/sections/news/",
+            "htmlFormattedUrl": "https://www.npr.org/sections/<b>news</b>/",
+            "pagemap": {
+                "speakablespecification": [
+                    {
+                        "cssselector": "[data-is-speakable]"
+                    }
+                ],
+                "metatags": [
+                    {
+                        "date": "2025-04-27",
+                        "apple-itunes-app": "app-id=324906251, app-argument=https://www.npr.org/sections/news",
+                        "og:image": "https://media.npr.org/include/images/facebook-default-wide-s1400-c100.jpg",
+                        "og:type": "article",
+                        "twitter:card": "summary",
+                        "twitter:title": "News",
+                        "og:site_name": "NPR",
+                        "cxenseparse:pageclass": "frontpage",
+                        "twitter:domain": "npr.org",
+                        "cxenseparse:publishtime": "2011-04-21T03:27:00-04:00",
+                        "og:title": "News",
+                        "rating": "General",
+                        "og:description": "NPR news, audio, and podcasts. Coverage of breaking stories, national and world news, politics, business, science, technology, and extended coverage of major national and world events.",
+                        "fb:pages": "10643211755",
+                        "fb:app_id": "138837436154588",
+                        "twitter:site": "@NPR",
+                        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+                        "article:content_tier": "free",
+                        "og:url": "https://www.npr.org/sections/news/",
+                        "article:opinion": "false"
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "ABC News - Breaking News, Latest News and Videos",
+            "htmlTitle": "ABC <b>News</b> - Breaking <b>News</b>, Latest <b>News</b> and Videos",
+            "link": "https://abcnews.go.com/",
+            "displayLink": "abcnews.go.com",
+            "snippet": "At least 36 dead, hundreds injured in explosion at Iranian port, officials say · Myrtle Beach shooting leaves 11 wounded, 1 dead · White House journalists ...",
+            "htmlSnippet": "At least 36 dead, hundreds injured in explosion at Iranian port, officials say &middot; Myrtle Beach shooting leaves 11 wounded, 1 dead &middot; White House journalists&nbsp;...",
+            "formattedUrl": "https://abcnews.go.com/",
+            "htmlFormattedUrl": "https://abc<b>news</b>.go.com/",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5csR8_xmsRNoDC8jfS6vK0S6KNDnsH2iR69BakiTbcAEHqeGOmwlACqSt&s",
+                        "width": "300",
+                        "height": "168"
+                    }
+                ],
+                "metatags": [
+                    {
+                        "og:image": "https://s.abcnews.com/images/US/abc_news_default_2000x2000_update_16x9_992.jpg",
+                        "twitter:app:url:iphone": "abcnewsiphone://link/home,HomePage",
+                        "twitter:app:id:googleplay": "com.abc.abcnews",
+                        "theme-color": "#fff",
+                        "copyright": "2025 ABC News",
+                        "og:type": "website",
+                        "og:site_name": "ABC News",
+                        "author": "ABC News",
+                        "og:title": "ABC News – Breaking News, Latest News and Videos",
+                        "twitter:app:url:ipad": "abcnewsipad://link/home,HomePage",
+                        "twitter:app:id:ipad": "306934135",
+                        "twitter:app:name:googleplay": "ABC News",
+                        "twitter:app:id:iphone": "300255638",
+                        "og:description": "Your trusted source for breaking news, analysis, exclusive interviews, headlines, and videos at ABCNews.com",
+                        "fb:pages": "86680728811",
+                        "fb:app_id": "4942312939",
+                        "twitter:app:url:googleplay": "https://abcnews.go.com/",
+                        "twitter:app:name:ipad": "ABC News",
+                        "viewport": "initial-scale=1.0, user-scalable=yes",
+                        "og:locale": "en_US",
+                        "fb:admins": "704409894",
+                        "og:url": "https://abcnews.go.com",
+                        "fb_title": "ABC News – Breaking News, Latest News and Videos",
+                        "twitter:app:name:iphone": "ABC News"
+                    }
+                ],
+                "cse_image": [
+                    {
+                        "src": "https://s.abcnews.com/images/US/abc_news_default_2000x2000_update_16x9_992.jpg"
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "News Corp",
+            "htmlTitle": "<b>News</b> Corp",
+            "link": "https://newscorp.com/",
+            "displayLink": "newscorp.com",
+            "snippet": "News Corp ... Passionate. Principled. Purposeful. News Corp delivers authoritative and engaging content from some of the world's most trusted brands. See Our ...",
+            "htmlSnippet": "<b>News</b> Corp ... Passionate. Principled. Purposeful. <b>News</b> Corp delivers authoritative and engaging content from some of the world&#39;s most trusted brands. See Our&nbsp;...",
+            "formattedUrl": "https://newscorp.com/",
+            "htmlFormattedUrl": "https://<b>news</b>corp.com/",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE6lpjb3aCdKiK9vviCyv_2BMAwiCPZgZZVe_r9Nt2nO5kMxq45om8TnLd&s",
+                        "width": "310",
+                        "height": "163"
+                    }
+                ],
+                "metatags": [
+                    {
+                        "og:image": "https://newscorp.com/app/uploads/2021/04/social-share-nc.jpg",
+                        "og:type": "website",
+                        "og:image:width": "1200",
+                        "twitter:card": "summary_large_image",
+                        "og:site_name": "News Corp",
+                        "viewport": "width=device-width, initial-scale=1",
+                        "og:title": "News Corp",
+                        "og:locale": "en_US",
+                        "og:image:height": "630",
+                        "og:image:type": "image/jpeg",
+                        "og:url": "https://newscorp.com/",
+                        "msapplication-tileimage": "https://newscorp.com/app/uploads/2021/06/cropped-favicon-270x270.jpg"
+                    }
+                ],
+                "cse_image": [
+                    {
+                        "src": "https://newscorp.com/app/uploads/2021/04/social-share-nc.jpg"
+                    }
+                ]
+            }
+        }
+    ]
+}

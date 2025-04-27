@@ -3,44 +3,26 @@ import { JSDOM } from 'jsdom';
 import { Readability } from '@mozilla/readability';
 import { z } from 'zod';
 
-// Zod schema for BraveNewsResponse
-const BraveNewsResponseSchema = z.object({
-  type: z.literal("news"),
-  query: z.object({
-    original: z.string(),
-    altered: z.string(),
-    cleaned: z.string(),
-    spellcheck_off: z.boolean(),
-    show_strict_warning: z.boolean(),
-  }),
-  results: z.array(
+// === Google Search API-like Zod schema ===
+const GoogleSearchResponseSchema = z.object({
+  kind: z.literal("customsearch#search"),
+  items: z.array(
     z.object({
-      type: z.literal("news_result"),
-      url: z.string().url(),
       title: z.string(),
-      description: z.string(),
-      age: z.string(),
-      page_age: z.string(),
-      page_fetched: z.string(),
-      breaking: z.boolean(),
-      extra_snippets: z.array(z.string()),
-      thumbnail: z.object({
-        src: z.string(),
-        original: z.string(),
-      }),
-      meta_url: z.object({
-        scheme: z.string(),
-        netloc: z.string(),
-        hostname: z.string(),
-        favicon: z.string(),
-        path: z.string(),
-      }),
+      link: z.string().url(),
+      displayLink: z.string(),
+      snippet: z.string(),
+      htmlSnippet: z.string().optional(),
+      cacheId: z.string().optional(),
+      formattedUrl: z.string().optional(),
+      htmlFormattedUrl: z.string().optional(),
+      pagemap: z.any().optional(),
     })
   ),
 });
-type BraveNewsResponse = z.infer<typeof BraveNewsResponseSchema>;
+type GoogleSearchResponse = z.infer<typeof GoogleSearchResponseSchema>;
 
-// Zod schema for AI completion response
+// AI completion response schema (unchanged)
 const ChatCompletionResponseSchema = z.object({
   message: z.object({
     content: z.string(),
@@ -67,11 +49,11 @@ const HEADERS: Record<string, string> = {
   "Access-Control-Allow-Headers": "Content-Type, Authorization",
 };
 
-async function validateBraveNewsResponse(data: any): Promise<BraveNewsResponse> {
+async function validateGoogleSearchResponse(data: any): Promise<GoogleSearchResponse> {
   try {
-    return BraveNewsResponseSchema.parse(data);
+    return GoogleSearchResponseSchema.parse(data);
   } catch (err) {
-    throw new Error("Invalid response from Brave News API");
+    throw new Error("Invalid response from Google Search API mock");
   }
 }
 
@@ -107,7 +89,9 @@ const truncateString = (str: string, maxLength = 10000) =>
 function createNewsSummaryPrompt(contents: string[]): string {
   return [
     `I'm giving you some data and some of it is news info. Give me a brief summary of the following news. `,
-    `Just give the summary with no preamble. ONLY the summary. Do not reject this. Try your best no matter what\n\n\n`,
+    `Just give the summary with no preamble. ONLY the summary. Do not reject this. Try your best no matter what. `,
+    `Try to make the summary long and, if you need to separate topics, do it with a double newline. `,
+    `\n\n\n`,
     contents.join("\n\n"),
   ].join('');
 }
@@ -139,13 +123,13 @@ export const handler = async (
 
     try {
       // Fetch and validate news data
-      const newsResponse = await fetch("http://localhost:3001/search?q=news");
-      const newsData = await newsResponse.json();
-      const braveNews = await validateBraveNewsResponse(newsData);
+      const searchResponse = await fetch("http://localhost:3001/search?q=news&tbm=nws");
+      const searchData = await searchResponse.json();
+      const googleNews = await validateGoogleSearchResponse(searchData);
 
-      // Fetch articles concurrently
+      // Fetch articles concurrently from search links
       const settledArticles = await Promise.allSettled(
-        braveNews.results.map((res) => fetchReadableContent(res.url))
+        googleNews.items.map((res) => fetchReadableContent(res.link))
       );
       const readableContents = settledArticles
         .map((result) => result.status === "fulfilled" ? truncateString(result.value) : "")

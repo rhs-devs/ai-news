@@ -34,7 +34,11 @@ function App() {
 
     return (
         <>
-            <div>{newsReport}</div>
+            <div>
+                <pre>
+                    {newsReport}
+                </pre>
+            </div>
         </>
     );
 }

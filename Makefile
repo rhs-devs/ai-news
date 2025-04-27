@@ -21,7 +21,7 @@ run-lambda-mock:
 	cd back-end/mocks; node ./lambda-server.mjs;
 
 run-mocks-for-backend:
-	cd back-end/mocks; node ./brave_and_open_ai_mocks.mjs;
+	cd back-end/mocks; node ./google_news_search_mocks.mjs;
 
 start-frontend:
 	cd ./frontend/ai-news-frontend/; npm run dev;
