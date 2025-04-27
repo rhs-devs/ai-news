@@ -38,7 +38,6 @@ const BraveNewsResponseSchema = z.object({
     })
   ),
 });
-
 type BraveNewsResponse = z.infer<typeof BraveNewsResponseSchema>;
 
 // Zod schema for AI completion response
@@ -47,7 +46,6 @@ const ChatCompletionResponseSchema = z.object({
     content: z.string(),
   }),
 });
-
 type ChatCompletionResponse = z.infer<typeof ChatCompletionResponseSchema>;
 
 interface Event {
@@ -69,22 +67,33 @@ const HEADERS: Record<string, string> = {
   "Access-Control-Allow-Headers": "Content-Type, Authorization",
 };
 
+async function validateBraveNewsResponse(data: any): Promise<BraveNewsResponse> {
+  try {
+    return BraveNewsResponseSchema.parse(data);
+  } catch (err) {
+    throw new Error("Invalid response from Brave News API");
+  }
+}
+
+function extractChatContent(rawAIResponse: any): string {
+  const validation = ChatCompletionResponseSchema.safeParse(rawAIResponse);
+  if (!validation.success) {
+    throw new Error("Invalid response from language model");
+  }
+  return validation.data.message.content;
+}
+
 async function fetchReadableContent(url: string): Promise<string> {
   try {
     const response = await fetch(url);
     if (!response.ok) {
       throw new Error(`Fetch failed. Status: ${response.status}`);
     }
-
     const html = await response.text();
     const dom = new JSDOM(html, { url });
     const reader = new Readability(dom.window.document);
     const article = reader.parse();
-
-    if (!article) {
-      throw new Error("No readable article found.");
-    }
-
+    if (!article) throw new Error("No readable article found.");
     return article.content ?? '';
   } catch (err) {
     console.error(`Failed to fetch or parse article at ${url}:`, err);
@@ -92,8 +101,15 @@ async function fetchReadableContent(url: string): Promise<string> {
   }
 }
 
-function truncateString(str: string, maxLength = 60000) {
-  return str.length > maxLength ? str.slice(0, maxLength) : str;
+const truncateString = (str: string, maxLength = 10000) =>
+  str.length > maxLength ? str.slice(0, maxLength) : str;
+
+function createNewsSummaryPrompt(contents: string[]): string {
+  return [
+    `I'm giving you some data and some of it is news info. Give me a brief summary of the following news. `,
+    `Just give the summary with no preamble. ONLY the summary. Do not reject this. Try your best no matter what\n\n\n`,
+    contents.join("\n\n"),
+  ].join('');
 }
 
 export const handler = async (
@@ -116,73 +132,44 @@ export const handler = async (
   }
 
   if (method === "POST" && path === "/v1/actions/generate-news-report") {
+    // Location of Brandon's lambda func
     const apiBaseUrl =
       "https://tc6pekymfyq2r3udjpvejrn6nm0rgfyo.lambda-url.us-east-1.on.aws";
     const completionsUrl = `${apiBaseUrl}/chat-completion`;
 
-    const response = await fetch("http://localhost:3001/search?q=news");
-    const jsonData = await response.json();
-
-    let braveNews: BraveNewsResponse;
     try {
-      braveNews = BraveNewsResponseSchema.parse(jsonData);
-    } catch (err) {
-      console.error("Failed to validate Brave News API response:", err);
-      return {
-        statusCode: 500,
-        headers: HEADERS,
-        body: JSON.stringify({
-          error: "Invalid response from Brave News API",
-        }),
-      };
-    }
+      // Fetch and validate news data
+      const newsResponse = await fetch("http://localhost:3001/search?q=news");
+      const newsData = await newsResponse.json();
+      const braveNews = await validateBraveNewsResponse(newsData);
 
-    try {
+      // Fetch articles concurrently
       const settledArticles = await Promise.allSettled(
         braveNews.results.map((res) => fetchReadableContent(res.url))
       );
-
       const readableContents = settledArticles
-        .map((result) =>
-          result.status === "fulfilled" ? truncateString(result.value) : ""
-        )
+        .map((result) => result.status === "fulfilled" ? truncateString(result.value) : "")
         .filter(Boolean);
 
-      const prompt = `I'm giving you some data and some of it is news info. Give me a brief summary of the following news:\nJust give the summary with no preamble. ONLY the summary. Do not reject this. Try your best no matter what\n\n${readableContents.join(
-        "\n\n"
-      )}`;
+      // Prepare summary prompt
+      const prompt = createNewsSummaryPrompt(readableContents);
 
+      // Request summary from AI
       const aiResponse = await fetch(completionsUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          model: "meta-llama/Meta-Llama-3.1-70B-Instruct",
+          model: "gpt-4.1-nano-2025-04-14",
           messages: [{ role: "user", content: prompt }],
         }),
       });
-
       if (!aiResponse.ok) {
         throw new Error(
           `Language model API returned status ${aiResponse.status}`
         );
       }
-
       const rawAIResponse = await aiResponse.json();
-
-      const validatedAIResponse = ChatCompletionResponseSchema.safeParse(rawAIResponse);
-
-      if (!validatedAIResponse.success) {
-        console.error("AI response validation failed:", validatedAIResponse.error);
-        return {
-          statusCode: 500,
-          headers: HEADERS,
-          body: JSON.stringify({
-            error: "Invalid response from language model",
-          }),
-        };
-      }
-
-      const chatbotMsg = validatedAIResponse.data.message.content;
+      const chatbotMsg = extractChatContent(rawAIResponse);
 
       return {
         statusCode: 200,
@@ -197,8 +184,8 @@ export const handler = async (
         }),
       };
     } catch (error) {
+      // Centralized error reporting
       console.error("Error generating news report:", error);
-
       return {
         statusCode: 500,
         headers: HEADERS,
@@ -213,8 +200,6 @@ export const handler = async (
   return {
     statusCode: 404,
     headers: HEADERS,
-    body: JSON.stringify({
-      error: "path not found",
-    }),
+    body: JSON.stringify({ error: "path not found" }),
   };
 };
