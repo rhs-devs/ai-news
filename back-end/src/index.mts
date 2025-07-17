@@ -53,6 +53,7 @@ async function validateGoogleSearchResponse(data: any): Promise<GoogleSearchResp
   try {
     return GoogleSearchResponseSchema.parse(data);
   } catch (err) {
+    console.error("Error validating Google Search response:", err);
     throw new Error("Invalid response from Google Search API mock");
   }
 }
@@ -60,14 +61,21 @@ async function validateGoogleSearchResponse(data: any): Promise<GoogleSearchResp
 function extractChatContent(rawAIResponse: any): string {
   const validation = ChatCompletionResponseSchema.safeParse(rawAIResponse);
   if (!validation.success) {
+    console.error("Invalid response from language model:", validation.error);
     throw new Error("Invalid response from language model");
   }
   return validation.data.message.content;
 }
 
 async function fetchReadableContent(url: string): Promise<string> {
+  const timeoutMilliseconds = 5000; // 5 seconds timeout
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), timeoutMilliseconds);
+
   try {
-    const response = await fetch(url);
+    const response = await fetch(url, { signal: controller.signal });
+    clearTimeout(timeoutId); // Clear timeout if fetch completes in time
+
     if (!response.ok) {
       throw new Error(`Fetch failed. Status: ${response.status}`);
     }
@@ -77,7 +85,12 @@ async function fetchReadableContent(url: string): Promise<string> {
     const article = reader.parse();
     if (!article) throw new Error("No readable article found.");
     return article.content ?? '';
-  } catch (err) {
+  } catch (err: any) {
+    clearTimeout(timeoutId); // Ensure timeout is cleared on any exit path
+    if (err.name === 'AbortError') {
+      console.error(`Fetch timed out for ${url} after ${timeoutMilliseconds}ms`);
+      return "[Article content timeout]";
+    }
     console.error(`Failed to fetch or parse article at ${url}:`, err);
     return "[Article content could not be retrieved.]";
   }
@@ -122,12 +135,10 @@ export const handler = async (
     const completionsUrl = `${apiBaseUrl}/chat-completion`;
 
     try {
-      // Fetch and validate news data
-      const searchResponse = await fetch("http://localhost:3001/search?q=news&tbm=nws");
+      const searchResponse = await fetch("https://redrllx6hsqdvhjj2iyvjx5a540lgvbi.lambda-url.us-east-1.on.aws/?q=news&tbm=nws");
       const searchData = await searchResponse.json();
       const googleNews = await validateGoogleSearchResponse(searchData);
 
-      // Fetch articles concurrently from search links
       const settledArticles = await Promise.allSettled(
         googleNews.items.map((res) => fetchReadableContent(res.link))
       );
@@ -135,15 +146,13 @@ export const handler = async (
         .map((result) => result.status === "fulfilled" ? truncateString(result.value) : "")
         .filter(Boolean);
 
-      // Prepare summary prompt
       const prompt = createNewsSummaryPrompt(readableContents);
 
-      // Request summary from AI
       const aiResponse = await fetch(completionsUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          model: "gpt-4.1-nano-2025-04-14",
+          model: "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
           messages: [{ role: "user", content: prompt }],
         }),
       });
@@ -168,7 +177,6 @@ export const handler = async (
         }),
       };
     } catch (error) {
-      // Centralized error reporting
       console.error("Error generating news report:", error);
       return {
         statusCode: 500,
