@@ -1,6 +1,7 @@
 .PHONY: start
 start:
 	@make build-backend
+	@make build-frontend
 	@echo "Starting all services: lambda mock, backend mocks, frontend..."
 	@bash -c '\
 		trap "echo Ctrl+C caught! Shutting down...; kill 0" SIGINT; \
@@ -23,5 +24,8 @@ run-lambda-mock:
 run-mocks-for-backend:
 	cd back-end/mocks; node ./google_news_search_mocks.mjs;
 
+build-frontend:
+	cd ./frontend/ai-news-frontend/; npm run build;
+
 start-frontend:
-	cd ./frontend/ai-news-frontend/; npm run dev;
+	cd ./frontend/ai-news-frontend/; npx serve -s dist -l 5173;

@@ -23,7 +23,8 @@ function App() {
                 console.log(json);
 
             } catch (error) {
-                if (typeof error === "object" && error && "message" in error && typeof error.message === "string") {
+                if (typeof error === "object" && error && "message" in error && typeof 
+                    error.message === "string") {
                     console.error(error.message);
                 }
             }
