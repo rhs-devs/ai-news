@@ -68,7 +68,7 @@ function extractChatContent(rawAIResponse: any): string {
 }
 
 async function fetchReadableContent(url: string): Promise<string> {
-  const timeoutMilliseconds = 5000; // 5 seconds timeout
+  const timeoutMilliseconds = 1000; // 5 seconds timeout
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), timeoutMilliseconds);
 
@@ -152,7 +152,7 @@ export const handler = async (
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          model: "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+          model: "openai/gpt-oss-120b",
           messages: [{ role: "user", content: prompt }],
         }),
       });
